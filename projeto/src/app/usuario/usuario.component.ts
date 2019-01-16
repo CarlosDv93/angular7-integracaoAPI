@@ -9,15 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsuarioComponent implements OnInit {
 
-  public usuario: Usuario;
+  public usuarios: Usuario[] ;
 
   constructor(
     private usuarioService : UsuarioService
   ) { }
 
   ngOnInit() {
-
-    this.usuario = this.usuarioService.getUsuario();
+    this.usuarios = this.usuarioService.listaUsuario();
   }
 
 }

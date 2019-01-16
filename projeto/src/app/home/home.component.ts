@@ -1,5 +1,6 @@
 import { UsuarioService } from './../usuario.service';
 import { Component, OnInit } from '@angular/core';
+import { Usuario } from '../usuario';
 
 @Component({
   selector: 'app-home',
@@ -9,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   public usuario : Usuario;
+  
   constructor(
     private usuarioService : UsuarioService
   ) { }
