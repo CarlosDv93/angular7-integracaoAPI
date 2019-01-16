@@ -1,3 +1,4 @@
+import { UsuarioService } from './../usuario.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  public usuario : Usuario;
+  constructor(
+    private usuarioService : UsuarioService
+  ) { }
 
   ngOnInit() {
+    this.usuario = this.usuarioService.getUsuario();
   }
 
 }
