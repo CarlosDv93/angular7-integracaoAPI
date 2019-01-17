@@ -1,0 +1,14 @@
+<table border=1>
+  <tr>
+    <th>ID</th>
+    <th>Sigla</th>
+    <th>Nome</th>
+  </tr>
+  <tr *ngFor="let estado of estados">
+    <th>
+      {{estado.id}}
+    </th>
+    <th>{{estado.sigla}}</th>
+    <th> {{estado.nome}} </th>
+  </tr>
+</table>
