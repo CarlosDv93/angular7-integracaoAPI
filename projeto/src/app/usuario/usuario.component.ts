@@ -16,7 +16,13 @@ export class UsuarioComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.usuarios = this.usuarioService.listaUsuario();
+    this.usuarioService.listaUsuario().subscribe(response => {
+      this.usuarios = response;
+    }, 
+  error => {
+    alert("Aconteceu Algo");
+    console.error(error);
+  })
   }
 
 }

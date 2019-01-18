@@ -11,8 +11,9 @@ export class UsuarioCadastroComponent implements OnInit {
 
   public usuarios: Usuario[] ;
   public usuario : Usuario = new Usuario();
+
   constructor(
-    
+    private usuarioService: UsuarioService
   ) { }
 
   ngOnInit() {
@@ -20,8 +21,13 @@ export class UsuarioCadastroComponent implements OnInit {
   }
 
   salvar(){
-    console.log(this.usuario);
-    alert("Usuário Salvo com Sucesso!");
+    this.usuarioService.salvar(this.usuario).subscribe(response => {
+      alert("Usuário Salvo com Sucesso!");
+    },
+    error => {
+      alert("Aconteceu algo de errado!");
+      console.log(error);
+    })
   }
 
 }

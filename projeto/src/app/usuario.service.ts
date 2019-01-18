@@ -1,3 +1,5 @@
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Usuario } from './usuario';
 
@@ -6,7 +8,9 @@ import { Usuario } from './usuario';
 })
 export class UsuarioService {
 
-  constructor() { }
+  private url = 'http://localhost:8080/usuario'
+
+  constructor(private http: HttpClient) { }
 
   public getUsuario() : Usuario {
     let usuario = new Usuario();
@@ -15,24 +19,11 @@ export class UsuarioService {
     return usuario;
   }
 
-  public listaUsuario() : Usuario[] {
-    return [
-      {
-        nome: "carlos",
-        email: "carlos@carlos.com"
-      },
-      {
-        nome: "maria",
-        email: "maria@maria.com"
-      },
-      {
-        nome: "carlos",
-        email: "carlos@carloscarlos.com"
-      },
-      {
-        nome: "shirley",
-        email: 'shirley@shirley.com'
-      }
-    ]
+  public listaUsuario() : Observable<Usuario[]> {
+    return this.http.get<Usuario[]>(this.url);
+  }
+
+  public salvar(usuario: Usuario) : Observable<Usuario> {
+    return this.http.post<Usuario>(this.url, usuario);
   }
 }
