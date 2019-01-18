@@ -1,14 +1,16 @@
 <div class="ui-g ui-fluid">
-  <div class="ui-g-12 ui-md-4">
+  <div class="ui-g-12 ui-md-12">
     
-    <div class="ui-inputgroup">
+    <div class="ui-inputgroup ui-md-4">
+      <span class="ui-inputgroup-addon"><i class="pi pi-user"></i></span>
       <input type="text" pInputText [(ngModel)]="usuario.nome" placeholder="Nome" (keypress)="notSemicolon($event)" type="text">
     </div>
-  
-    <div class="ui-inputgroup">
+    <div class="ui-inputgroup ui-md-4">
+      <span class="ui-inputgroup-addon"><i class="pi pi-envelope"></i></span>
       <input type="text" pInputText [(ngModel)]="usuario.email" placeholder="Email">
     </div>
-
-    <button class="ui-inputgroup" pButton label="Salvar" (click)="salvar()"></button>
+    <div class="ui-inputgroup right " >
+      <button class="center ui-md-5" pButton label="Salvar" icon="pi pi-save" (click)="salvar()"></button>
+    </div>
   </div>
 </div>
