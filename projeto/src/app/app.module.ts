@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MenuModule} from 'primeng/menu';
+import { MenubarModule } from 'primeng/menubar'
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {MenuModule} from 'primeng/menu';
     AppRoutingModule,
     HttpClientModule,
     MenuModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MenubarModule
   ],
   providers: [
     MenuComponent
