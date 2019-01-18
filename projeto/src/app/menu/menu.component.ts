@@ -17,16 +17,15 @@ export class MenuComponent implements OnInit {
     this.items = [{
       label: 'Home',
       items: [
-        {label: 'Home', icon: 'fa fa-plus', routerLink: 'home'}
+        {label: 'Home', icon: 'pi pi-home', routerLink: 'home'}
       ]
     },
     {
       label: 'Usuários',
-      items: [
-        {label: 'Usuários', routerLink: 'usuario', icon: 'pi-user'}
-      ]    
+      icon: 'pi pi-user',
+      routerLink: 'usuario'
     }];
-}
+  }
   
 
 }

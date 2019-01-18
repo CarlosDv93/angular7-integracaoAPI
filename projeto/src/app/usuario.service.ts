@@ -27,4 +27,8 @@ export class UsuarioService {
   public salvar(usuario: Usuario) : Observable<Usuario> {
     return this.http.post<Usuario>(this.url, usuario);
   }
+
+  public delete(id : string) : Observable<any> {
+    return this.http.delete(this.url + "/" + id);
+  }
 }

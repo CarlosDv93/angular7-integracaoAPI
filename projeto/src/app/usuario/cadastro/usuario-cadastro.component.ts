@@ -30,4 +30,12 @@ export class UsuarioCadastroComponent implements OnInit {
     })
   }
 
+  notSemicolon(event): boolean {
+    const charCode = (event.which) ? event.which : event.keyCode;
+    if (charCode > 31 && (charCode == 59)) {
+      return false;
+    }
+    return true;
+
+  }
 }

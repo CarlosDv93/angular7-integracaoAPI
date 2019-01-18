@@ -2,7 +2,7 @@
   <div class="ui-g-12 ui-md-4">
     
     <div class="ui-inputgroup">
-      <input type="text" pInputText [(ngModel)]="usuario.nome" placeholder="Nome">         
+      <input type="text" pInputText [(ngModel)]="usuario.nome" placeholder="Nome" (keypress)="notSemicolon($event)" type="text">
     </div>
   
     <div class="ui-inputgroup">
